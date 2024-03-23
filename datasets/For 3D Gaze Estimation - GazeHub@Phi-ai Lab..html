@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/ -->
+<html lang="en" style="scroll-padding-top: 76px;"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="https://phi-ai.buaa.edu.cn/Gazehub/img/favicon.ico">
+        <title>For 3D Gaze Estimation - GazeHub@Phi-ai Lab.</title>
+        <link href="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/bootstrap.min.css" rel="stylesheet">
+        <link href="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/font-awesome.min.css" rel="stylesheet">
+        <link href="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/github.min.css">
+
+        <script src="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/jquery-1.10.2.min.js" defer=""></script>
+        <script src="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/bootstrap.min.js" defer=""></script>
+        <script src="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    <style id="NDAwMDAwMTk5OTk5OTc="></style><script type="text/javascript" charset="utf-8" defer="" async="" src="chrome-extension://fcngaiekpleclobpjdomnclbppnfnfnn/inject-scripts/patch-xhr.js" data-params="{}"></script></head>
+
+    <body style="" class="vsc-initialized" cz-shortcut-listen="true">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="https://phi-ai.buaa.edu.cn/Gazehub/">GazeHub@Phi-ai Lab.</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#" class="nav-link dropdown-toggle" data-toggle="dropdown">Datasets <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/2D-dataset/" class="dropdown-item">For 2D Gaze Estimation</a>
+</li>
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/" class="dropdown-item active">For 3D Gaze Estimation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#" class="nav-link dropdown-toggle" data-toggle="dropdown">Methods &amp; Codes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/2D-method/" class="dropdown-item">For 2D Gaze Estimation</a>
+</li>
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-method/" class="dropdown-item">For 3D Gaze Estimation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/rectification/" class="dropdown-item">Data rectification</a>
+</li>
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/gazeconv/" class="dropdown-item">2D/3D gaze conversion</a>
+</li>
+                                    
+<li>
+    <a href="https://phi-ai.buaa.edu.cn/Gazehub/originconv/" class="dropdown-item">Gaze origin conversion</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="https://phi-ai.buaa.edu.cn/Gazehub/2D-dataset/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="https://phi-ai.buaa.edu.cn/Gazehub/2D-method/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary" style="top: 76px;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#datasets" class="nav-link active">Datasets</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#mpiigaze" class="nav-link">MPIIGaze</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#mpiifacegaze" class="nav-link">MPIIFaceGaze</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#eyediap-eye" class="nav-link">EyeDiap (eye)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#eyediap-face" class="nav-link">EyeDiap (face)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#ut-multiview" class="nav-link">UT-Multiview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#eth-xgaze" class="nav-link">ETH-XGaze</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#gaze360" class="nav-link">Gaze360</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#rt-gene" class="nav-link">Rt-Gene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#reference" class="nav-link">Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="datasets">Datasets</h1>
+<p>This page provides the dataset-related information of <code>3D gaze estimation</code>.</p>
+<p>In this page, </p>
+<ul>
+<li>we introduce the data pre-processing of each datasets.</li>
+<li>we provide the code of data pre-processing.</li>
+<li>we summarize the links of datasets. </li>
+</ul>
+<p>We invite you to use our data processing code, and add your result into the benchmark.  </p>
+<p>Note that, you should first download the gaze rectification code <code>data_processing_core.py</code> from this <a href="https://phi-ai.buaa.edu.cn/Gazehub/rectification/">page</a> before using our data processing code.</p>
+<p>If you use the codes in this page, please cite our survey:</p>
+<pre><code class="hljs coffeescript">@article{Cheng2021Survey,
+    title={Appearance-based Gaze Estimation With Deep Learning: A Review <span class="hljs-keyword">and</span> Benchmark},
+    author={Yihua Cheng <span class="hljs-keyword">and</span> Haofei Wang <span class="hljs-keyword">and</span> Yiwei Bao <span class="hljs-keyword">and</span> Feng Lu},
+    journal={arXiv preprint arXiv:<span class="hljs-number">2104.12668</span>},
+    year={<span class="hljs-number">2021</span>}
+}
+</code></pre>
+<hr>
+<h2 id="mpiigaze">MPIIGaze</h2>
+<p>This processed dataset contains <strong>eye images</strong> and <strong>gaze directions of each eyes</strong>. </p>
+<h4 id="data-pre-processing">Data pre-processing</h4>
+<p>We follow the evaluation protocol of MPIIGaze.
+They provide a evaluation set containing 15 subjects and 3,000 eye images of each subject.
+The 3,000 eye images are consisted of 1,500 left eye image and 1,500 right eye image.
+We normalize the evaluation set with the same method as [1].
+The reference point in the normalization is set as eye centers. 
+We also flip the right eye image as [1]. 
+After the normalization, eye images are histogram-equalised to handle various illumination.
+In our benchmark, we use leave-one-person-out strategy for  evaluation.</p>
+<h4 id="codes-of-pre-processing">Codes of pre-processing</h4>
+<p>Please download <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/data_processing_mpii.pdf" download="data_processing_mpii.py" target="_blank">here</a> for the source code. 
+The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/MPIIGaze"</span>
+<span class="hljs-attr">sample_root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/MPIIGaze/Origin/Evaluation Subset/sample list for eye image"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/EyeBased/MPIIGaze"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of <code>MPIIGaze</code>. </li>
+<li>The <code>sample_root</code> indicates the sample list in <code>MPIIGaze</code>.</li>
+<li>The <code>out_root</code> is the path for saving result.</li>
+</ul>
+<p>To use the code, you should first set the three parameters.
+Then, run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_mpii</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>The normalized data is saved in the <code>out_root</code>.
+We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/EyeBased/MPIIGaze.pdf" download="MPIIGaze.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data.</p>
+<h4 id="dataset-links">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/appearance-based-gaze-estimation-in-the-wild" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/appearance-based-gaze-estimation-in-the-wild" target="_blank">here</a>. -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@inproceedings{zhang15_cvpr,
+    Author = {Xucong Zhang <span class="hljs-keyword">and</span> Yusuke Sugano <span class="hljs-keyword">and</span> Mario Fritz <span class="hljs-keyword">and</span> Bulling, Andreas},
+    Title = {Appearance-based Gaze Estimation <span class="hljs-keyword">in</span> the Wild},
+    Booktitle = {Proc. <span class="hljs-keyword">of</span> the IEEE Conference <span class="hljs-literal">on</span> Computer Vision <span class="hljs-keyword">and</span> Pattern Recognition (CVPR)},
+    Year = {<span class="hljs-number">2015</span>},
+    Month = {June}
+    Pages = {<span class="hljs-number">4511</span><span class="hljs-number">-4520</span>} 
+}
+</code></pre>
+<hr>
+<h2 id="mpiifacegaze">MPIIFaceGaze</h2>
+<p>This processed dataset contains face and eye images.
+It also provides gaze directions of each face.</p>
+<h4 id="data-pre-processing_1">Data pre-processing</h4>
+<p>We follow [2] to process dataset.
+This dataset is an extensive version of MPIIGaze.
+We also use the evaluation dataset of MPIIGaze for evaluation.
+Detailly, for each eye image in the MPIIGaze, we get the corresponding face images.
+The normalization is done in the face image.
+Note that, the face image is flipped when the original sampled eye image is a right eye image as [2].
+After normalizing the face image, we crop eye images from the face image.
+In our benchmark, we use leave-one-person-out strategy for the evaluation.</p>
+<h4 id="codes-of-pre-processing_1">Codes of pre-processing</h4>
+<p>Please download <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_mpii.pdf" download="data_processing_mpii.py" target="_blank">here</a>. The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/MPIIFaceGaze"</span>
+<span class="hljs-attr">sample_root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/MPIIGaze/Origin/Evaluation Subset/sample list for eye image"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/EyeBased/MPIIGaze"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of <code>MPIIFaceGaze</code>.</li>
+<li>The <code>sample_root</code> indicates the sample list in <code>MPIIGaze</code>. Note that, this file is not contained in <code>MPIIFaceGaze</code>. You should download <code>MPIIGaze</code> for this file.   </li>
+<li>The <code>out_root</code> is the path for saving result.</li>
+</ul>
+<p>To use the code, you should set the three parameters first., and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_mpii</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>The normalized data is saved in <code>out_root</code>.
+We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/FaceBased/MPIIFaceGaze.pdf" download="MPIIFaceGaze.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<h4 id="dataset-links_1">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.  -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@inproceedings{zhang2017s,
+    title={It’s written all over your face: Full-face appearance-based gaze estimation},
+    author={Zhang, Xucong <span class="hljs-keyword">and</span> Sugano, Yusuke <span class="hljs-keyword">and</span> Fritz, Mario <span class="hljs-keyword">and</span> Bulling, Andreas},
+    booktitle={Computer Vision <span class="hljs-keyword">and</span> Pattern Recognition Workshops (CVPRW), <span class="hljs-number">2017</span> IEEE Conference <span class="hljs-literal">on</span>},
+    pages={<span class="hljs-number">2299</span>-<span class="hljs-number">-2308</span>},
+    year={<span class="hljs-number">2017</span>},
+    organization={IEEE}
+}
+</code></pre>
+<hr>
+<h2 id="eyediap-eye">EyeDiap (eye)</h2>
+<p>This processed dataset provides <strong>eye images</strong> and <strong>gaze directions of each eye</strong>.</p>
+<h4 id="data-pre-processing_2">Data pre-processing</h4>
+<p>We select VGA videos of screen targets and sample one image per fifteen frames.
+We then truncate the sampled image of each video to ensure the same number of images.
+We use the method proposed in [3] for normalization.
+Note that, only left eye images are used for evaluation.
+The reference point is set as eye center.
+After the normalization, eye images are histogram-equalised to handle various illumination.
+In our benchmark, we randomly divide whole subjects into four clusters and perform four-fold cross validation. </p>
+<h4 id="codes-of-pre-processing_2">Codes of pre-processing</h4>
+<p>Please download from <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/data_processing_diap.pdf" download="data_processing_diap.py" target="_blank">here</a>. The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/EyeDiap/Data"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/EyeBased/EyeDiap"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of original <code>EyeDiap</code> dataset.</li>
+<li>The <code>out_root</code> is the path for saving result file.</li>
+</ul>
+<p>To use the code, you should first set the two paramters, and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_diap</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>The normalized data is saved in <code>out_root</code>.
+We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/EyeBased/EyeDiap.pdf" download="EyeDiap.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<p>please download  <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/Cluster_diap.pdf" download="Cluster_diap.py" target="_blank">here</a> for <code>cluster_diap.py</code>.</p>
+<h4 id="dataset-links_2">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://www.idiap.ch/en/dataset/eyediap" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.  -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@inproceedings{eyediap,
+    author = {Funes Mora, Kenneth Alberto <span class="hljs-keyword">and</span> Monay, Florent <span class="hljs-keyword">and</span> Odobez, Jean-Marc},
+    title = {EYEDIAP: A Database <span class="hljs-keyword">for</span> the Development <span class="hljs-keyword">and</span> Evaluation <span class="hljs-keyword">of</span> Gaze Estimation Algorithms <span class="hljs-keyword">from</span> RGB <span class="hljs-keyword">and</span> RGB-D Cameras},
+    year = {<span class="hljs-number">2014</span>},
+    isbn = {<span class="hljs-number">9781450327510</span>},
+    publisher = {Association <span class="hljs-keyword">for</span> Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https:<span class="hljs-regexp">//</span>doi.org/<span class="hljs-number">10.1145</span>/<span class="hljs-number">2578153.2578190</span>},
+    doi = {<span class="hljs-number">10.1145</span>/<span class="hljs-number">2578153.2578190</span>},
+    booktitle = {Proceedings <span class="hljs-keyword">of</span> the Symposium <span class="hljs-literal">on</span> Eye Tracking Research <span class="hljs-keyword">and</span> Applications},
+    pages = {<span class="hljs-number">255</span>–<span class="hljs-number">258</span>},
+    numpages = {<span class="hljs-number">4</span>},
+    keywords = {natural-light, database, RGB-D, RGB, remote sensing, gaze estimation, depth, head pose},
+    location = {Safety Harbor, Florida},
+    series = {ETRA <span class="hljs-string">'14}
+}
+</span></code></pre>
+<h2 id="eyediap-face">EyeDiap (face)</h2>
+<p>This processed dataset contains <strong>face and eye images</strong>.
+It also provides <strong>gaze directions of each face</strong>.</p>
+<h4 id="data-pre-processing_3">Data pre-processing</h4>
+<p>We select VGA videos of screen targets and sample one image per fifteen frames.
+We then truncate the sampled image of each video to ensure the same number of images.
+We use the method proposed in [3] for normalization.
+The reference point is set as the center of two eyes.
+We crop the eye image from the normalized face image.
+Eye images are also histogram-equalised to handle various illumination.
+In our benchmark, we randomly divide whole subjects into four clusters and perform leave-one-out evaluation strategy in the four clusters.
+Note that, the clusters are same as the clusters in <code>EyeDiap (eye center)</code>.</p>
+<h4 id="codes-of-pre-processing_3">Codes of pre-processing</h4>
+<p>Please download <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_diap.pdf" download="data_processing_diap.py" target="_blank">here</a>. The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/EyeDiap/Data"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/EyeDiap"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of <code>EyeDiap</code>.</li>
+<li>The <code>out_root</code> is the path for saving result.</li>
+</ul>
+<p>To use the code, you should first set the two paramters, and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_diap</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>The normalized data is saved in <code>out_root</code>.
+We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/FaceBased/EyeDiap.pdf" download="EyeDiap.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<p>please download  <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/Cluster_diap.pdf" download="Cluster_diap.py" target="_blank">here</a> for <code>cluster_diap.py</code>.</p>
+<h4 id="dataset-links_3">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://www.idiap.ch/en/dataset/eyediap" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.-->
+
+<p>If you use this dataset, please cite:</p>
+<pre><code class="hljs coffeescript">@inproceedings{eyediap,
+    author = {Funes Mora, Kenneth Alberto <span class="hljs-keyword">and</span> Monay, Florent <span class="hljs-keyword">and</span> Odobez, Jean-Marc},
+    title = {EYEDIAP: A Database <span class="hljs-keyword">for</span> the Development <span class="hljs-keyword">and</span> Evaluation <span class="hljs-keyword">of</span> Gaze Estimation Algorithms <span class="hljs-keyword">from</span> RGB <span class="hljs-keyword">and</span> RGB-D Cameras},
+    year = {<span class="hljs-number">2014</span>},
+    isbn = {<span class="hljs-number">9781450327510</span>},
+    publisher = {Association <span class="hljs-keyword">for</span> Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https:<span class="hljs-regexp">//</span>doi.org/<span class="hljs-number">10.1145</span>/<span class="hljs-number">2578153.2578190</span>},
+    doi = {<span class="hljs-number">10.1145</span>/<span class="hljs-number">2578153.2578190</span>},
+    booktitle = {Proceedings <span class="hljs-keyword">of</span> the Symposium <span class="hljs-literal">on</span> Eye Tracking Research <span class="hljs-keyword">and</span> Applications},
+    pages = {<span class="hljs-number">255</span>–<span class="hljs-number">258</span>},
+    numpages = {<span class="hljs-number">4</span>},
+    keywords = {natural-light, database, RGB-D, RGB, remote sensing, gaze estimation, depth, head pose},
+    location = {Safety Harbor, Florida},
+    series = {ETRA <span class="hljs-string">'14}
+}
+</span></code></pre>
+<h2 id="ut-multiview">UT-Multiview</h2>
+<h4 id="data-pre-processing_4">Data pre-processing</h4>
+<p>UT-Multiview dataset provides processed data.
+We divide the whole subjects into three clusters and each cluster contains 16 subjects.
+In our benchmark, we perform three-fold cross validation. 
+Following [4], we use synthesized set for training.
+We use the collected data for test.</p>
+<h4 id="codes-of-pre-processing_4">Codes of pre-processing</h4>
+<p>Please download <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/data_processing_ut.pdf" download="data_processing_ut.py" target="_blank">here</a>.
+The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/UT/Origin"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/EyeBased/UT"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of original <code>UT</code> dataset.</li>
+<li>The <code>out_root</code> is the path for saving result.</li>
+</ul>
+<p>To use the code, you should first set the two paramters, and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_ut</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>The normalized data is saved in <code>out_root</code>.
+We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/EyeBased/UT.pdf" download="UT.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<p>please download  <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/Cluster_train_ut.pdf" download="Cluster_train_ut.py" target="_blank">here</a> for <code>cluster_train_ut.py</code>. and <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/EyeBased/Cluster_test_ut.py" download="Cluster_test_ut.py" target="_blank">here</a> for <code>cluster_test_ut.py</code>.</p>
+<h4 id="dataset-links_4">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://ut-vision.org/datasets" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.  -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@InProceedings{Sugano_2014_CVPR,
+    author = {Sugano, Yusuke <span class="hljs-keyword">and</span> Matsushita, Yasuyuki <span class="hljs-keyword">and</span> Sato, Yoichi},
+    title = {Learning-<span class="hljs-keyword">by</span>-Synthesis <span class="hljs-keyword">for</span> Appearance-based <span class="hljs-number">3</span>D Gaze Estimation},
+    booktitle = {The IEEE Conference <span class="hljs-literal">on</span> Computer Vision <span class="hljs-keyword">and</span> Pattern Recognition (CVPR)},
+    month = {June},
+    year = {<span class="hljs-number">2014</span>}
+}
+</code></pre>
+<h2 id="eth-xgaze">ETH-XGaze</h2>
+<h4 id="data-pre-processing_5">Data pre-processing</h4>
+<p>ETH-XGaze dataset provides processed data.
+The dataset provide training and test set.
+We directly follow the protocol of this dataset.</p>
+<h4 id="codes-of-pre-processing_5">Codes of pre-processing</h4>
+<p>Please download  <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_eth.pdf" download="data_processing_eth.py" target="_blank">here</a>.
+This code only convert the original data into a standard input file for our code. </p>
+<p>The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">path</span> = <span class="hljs-string">"/home/cyh/dataset/Original/ETH-Gaze/test"</span>
+<span class="hljs-attr">imo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Image/test"</span>
+<span class="hljs-attr">annoo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Label/test.label"</span>
+<span class="hljs-attr">test</span> = <span class="hljs-literal">True</span>
+</code></pre>
+<ul>
+<li>The <code>path</code> is the path of original <code>ETH-Gaze</code> dataset.
+It indicate the converted folder.
+It can be <code>ETH-Gaze/train</code> or <code>ETH-Gaze/test</code>. </li>
+<li>The <code>imo_path</code> is the path for saving images.</li>
+<li>The <code>annoo_path</code> is the path for saving label file.</li>
+<li>The <code>test</code> is <code>True</code> when the <code>path</code> is <code>ETH-Gaze/test</code> and <code>False</code> when the <code>path</code> is <code>ETH-Gaze/train</code>.</li>
+</ul>
+<p>To use the code, you should first set the four paramters liking</p>
+<pre><code class="hljs ini"><span class="hljs-attr">path</span> = <span class="hljs-string">"/home/cyh/dataset/Original/ETH-Gaze/test"</span>
+<span class="hljs-attr">imo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Image/test"</span>
+<span class="hljs-attr">annoo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Label/test.label"</span>
+<span class="hljs-attr">test</span> = <span class="hljs-literal">True</span>
+</code></pre>
+<p>and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_eth</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>You also need to modify the paramters liking:</p>
+<pre><code class="hljs ini"><span class="hljs-attr">path</span> = <span class="hljs-string">"/home/cyh/dataset/Original/ETH-Gaze/train"</span>
+<span class="hljs-attr">imo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Image/train"</span>
+<span class="hljs-attr">annoo_path</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/ETH-Gaze/Label/train.label"</span>
+<span class="hljs-attr">test</span> = <span class="hljs-literal">False</span>
+</code></pre>
+<p>and run again</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_eth</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>Note that, in our benchmark, we split the training set into a new training set and validation set.
+The validation set contains the data of subject <code>27, 43, 51, 60, 69</code>.</p>
+<p>We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/FaceBased/ETH-XGaze.pdf" download="ETH-XGaze.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<h4 id="dataset-links_5">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://ait.ethz.ch/projects/2020/ETH-XGaze" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>.  -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@inproceedings{Zhang_2020_ECCV,
+    author    = {Xucong Zhang <span class="hljs-keyword">and</span> Seonwook Park <span class="hljs-keyword">and</span> Thabo Beeler <span class="hljs-keyword">and</span> Derek Bradley <span class="hljs-keyword">and</span> Siyu Tang <span class="hljs-keyword">and</span> Otmar Hilliges},
+    title     = {ETH-XGaze: A Large Scale Dataset <span class="hljs-keyword">for</span> Gaze Estimation under Extreme Head Pose <span class="hljs-keyword">and</span> Gaze Variation},
+    year      = {<span class="hljs-number">2020</span>},
+    booktitle = {The European Conference <span class="hljs-literal">on</span> Computer Vision (ECCV)}
+}
+</code></pre>
+<h2 id="gaze360">Gaze360</h2>
+<h4 id="data-pre-processing_6">Data pre-processing</h4>
+<p>We directly use the provided data of <code>Gaze360</code>.
+The dataset already splits the whole dataset into training, test and valiation set.
+Note that, some images in Gaze360 only capture the back side of the subject. 
+These images are not suitable for appearance-based methods.
+Therefore, we first clean the dataset with a simply rule. We remove the images without face detection results based on the provided face detection annotation.</p>
+<h4 id="codes-of-pre-processing_6">Codes of pre-processing</h4>
+<p>Please download  <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_gaze360.pdf" download="data_processing_gaze360.py" target="_blank">here</a>.</p>
+<p>The code contains following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/Gaze360/"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/Gaze360"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of original <code>Gaze360</code> dataset.</li>
+<li>The <code>out_root</code> is the path for saving result file.</li>
+</ul>
+<p>To use the code, you should first set the two paramters, and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_gaze360</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/FaceBased/Gaze360.pdf" download="Gaze360.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<h4 id="dataset-links_6">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://gaze360.csail.mit.edu/" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>. -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@InProceedings{Kellnhofer_2019_ICCV,
+    author = {Kellnhofer, Petr <span class="hljs-keyword">and</span> Recasens, Adria <span class="hljs-keyword">and</span> Stent, Simon <span class="hljs-keyword">and</span> Matusik, Wojciech <span class="hljs-keyword">and</span> Torralba, Antonio},
+    title = {Gaze360: Physically Unconstrained Gaze Estimation <span class="hljs-keyword">in</span> the Wild},
+    booktitle = {The IEEE International Conference <span class="hljs-literal">on</span> Computer Vision (ICCV)},
+    month = {October},
+    year = {<span class="hljs-number">2019</span>}
+}
+</code></pre>
+<hr>
+<h2 id="rt-gene">Rt-Gene</h2>
+<h4 id="data-pre-processing_7">Data pre-processing</h4>
+<p>We follow the evaluation protocol.
+The whole dataset is splited into three clusters.
+A three-folder cross validation should be done in the dataset.
+Note that, the dataset contains synthesis images and collected images.
+We use both two kinds of images for training and test in collected images.</p>
+<h4 id="codes-of-pre-processing_7">Codes of pre-processing</h4>
+<p>Please download <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_rt_train.pdf" download="data_processing_rt_train.py" target="_blank">here</a> and <a href="https://phi-ai.buaa.edu.cn/Gazehub/Codes/FaceBased/data_processing_rt_test.pdf" download="data_processing_rt_test.py" target="_blank">here</a>.</p>
+<p>The codes contain following parameters.</p>
+<pre><code class="hljs ini"><span class="hljs-attr">root</span> = <span class="hljs-string">"/home/cyh/dataset/Original/Rt-Gene"</span>
+<span class="hljs-attr">out_root</span> = <span class="hljs-string">"/home/cyh/dataset/FaceBased/Rt-Gene"</span>
+</code></pre>
+<ul>
+<li>The <code>root</code> is the path of original <code>Rt-Gene</code> dataset.</li>
+<li>The <code>out_root</code> is the path for saving result file.</li>
+</ul>
+<p>To use the codes, you should first set the two paramters, and run</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_rt_train</span><span class="hljs-selector-class">.py</span>
+<span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">data_processing_rt_test</span><span class="hljs-selector-class">.py</span>
+</code></pre>
+<p>We also provide the <a href="https://phi-ai.buaa.edu.cn/Gazehub/Guideline/FaceBased/rt.pdf" download="rt.pdf" target="_blank"> <strong>guide</strong> </a> for using our normalized data. </p>
+<h4 id="dataset-links_7">Dataset links</h4>
+<p>The original dataset can be downloaded from <a href="https://github.com/Tobias-Fischer/rt_gene" target="_blank">here</a>.  </p>
+<!--We also provide the processed dataset. Please download from <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/its-written-all-over-your-face-full-face-appearance-based-gaze-estimation" target="_blank">here</a>. -->
+
+<p>To apply our code on this original dataset, please also cite:</p>
+<pre><code class="hljs coffeescript">@InProceedings{Fischer_2018_ECCV,
+    author = {Fischer, Tobias <span class="hljs-keyword">and</span> Jin Chang, Hyung <span class="hljs-keyword">and</span> Demiris, Yiannis},
+    title = {RT-GENE: Real-Time Eye Gaze Estimation <span class="hljs-keyword">in</span> Natural Environments},
+    booktitle = {The European Conference <span class="hljs-literal">on</span> Computer Vision (ECCV)},
+    month = {September},
+    year = {<span class="hljs-number">2018</span>}
+}
+</code></pre>
+<hr>
+<h2 id="reference">Reference</h2>
+<ol>
+<li>Appearance-based Gaze Estimation in the Wild.</li>
+<li>It’s written all over your face: Full-face appearance-based gaze estimation</li>
+<li>Revisiting Data Normalization for Appearance-Based Gaze Estimation</li>
+<li>Learning-by-Synthesis for Appearance-based 3D Gaze Estimation</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Phi-ai Lab. Copyright© 2017-2021 | 京ICP备17074292号</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/base.js" defer=""></script>
+        <script src="./For 3D Gaze Estimation - GazeHub@Phi-ai Lab._files/main.js" defer=""></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</body></html>
