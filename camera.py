@@ -1,5 +1,5 @@
 import cv2
-from batch_face import drawLandmark_multiple, RetinaFace, LandmarkPredictor
+from batch_face.batch_face import drawLandmark_multiple, RetinaFace, LandmarkPredictor
 import time
 import numpy as np
 """ Скрипт запускает камеру и делает маску с ключевыми точками лица"""

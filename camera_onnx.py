@@ -1,11 +1,10 @@
 import cv2
-from batch_face import drawLandmark_multiple, RetinaFace, LandmarkPredictor
+from batch_face.batch_face import drawLandmark_multiple, RetinaFace, LandmarkPredictor
 import time
 import numpy as np
-""" Скрипт запускает камеру и делает маску с ключевыми точками лица"""
 
 if __name__ == "__main__":
-    predictor = LandmarkPredictor(gpu_id=0, backbone="PFLD", file=None)
+    predictor = LandmarkPredictor(gpu_id="onnx", backbone="PFLD")
     detector = RetinaFace(0)
     cap = cv2.VideoCapture(0)
     faces = None
@@ -15,9 +14,9 @@ if __name__ == "__main__":
         ret, img = cap.read()
         if not ret:
             break
-        if faces is None:  
+        if faces is None:  # 只在第一帧检测人脸
             faces = detector(img, cv=True, threshold=0.5)
-        else:
+        else:  # 其他帧用landmark更新框
             ldm_new = results[0]
             (x1, y1), (x2, y2) = ldm_new.min(0), ldm_new.max(0)
             box_new = np.array([x1, y1, x2, y2])
@@ -35,6 +34,4 @@ if __name__ == "__main__":
 
         cv2.imshow("", img)
         cv2.waitKey(1)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
         print("FPS=", 1 / (time.time() - start))

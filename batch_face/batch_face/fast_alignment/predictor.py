@@ -4,7 +4,7 @@ import numpy as np
 from torch.utils.data import DataLoader
 from .basenet import MobileNet_GDConv
 from .pfld_compressed import PFLDInference
-from batch_face.utils import (
+from ..utils import (
     detection_adapter,
     get_default_onnx_file,
     is_image,
@@ -12,6 +12,14 @@ from batch_face.utils import (
     to_numpy,
     load_weights,
 )
+"""from batch_face.utils import (
+    detection_adapter,
+    get_default_onnx_file,
+    is_image,
+    is_box,
+    to_numpy,
+    load_weights,
+)"""
 
 try:
     import onnx

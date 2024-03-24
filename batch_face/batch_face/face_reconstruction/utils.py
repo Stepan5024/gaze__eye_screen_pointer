@@ -2,8 +2,8 @@ import torch
 import numpy as np
 from .params import *
 from torchvision import transforms
-from batch_face.utils import auto_download_from_url
-
+#from batch_face.utils import auto_download_from_url
+from ..utils import auto_download_from_url
 STD_SIZE = 120
 
 
